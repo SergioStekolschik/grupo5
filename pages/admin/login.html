@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Login | Funkoshop</title>
+    <meta name="description" content="HTML">
+    <meta name="viewport" content="wilih=device-wilih, initial-scale=1">
+    <link rel="stylesheet" href="../../css/admin.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar container">
+            <picture class="navbar__logo">
+                <a href="../../index.html">
+                    <img src="../../img/branding/logo_light_horizontal.svg" alt="Isologotipo de la marca Funkoshop" />
+                </a>
+            </picture>
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a class="navbar__link" href="../../index.html">VER TIENDA</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="./admin.html">ADMIN</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="./logout.html">SALIR</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="container">
+            <h2>INGRESAR A MI CUENTA</h2>
+            <span>
+                <form action="URL-Destino" method="post" enctype="multipart/form-data" class="container">
+
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email" value="e-mail"> <br>
+
+                    <label for="contrasena">Contrase&ntilde;a:</label>
+                    <input type="texpassword" name="contrasena" id="password"> <br>
+
+
+                    <input type="submit" value="Ingresar">
+
+                    <input type="checkbox" name="recordame" id="recordame">
+                    <label for="recordame">Recordame</label>
+                </form>
+                <a href="./pages/shop.html">Olvid&eacute; mi contrase&ntilde;a</a>
+            </span>
+        </section>
+    </main>
+    <footer class="footer">
+        <nav class="navbar container">
+            <ul class="navbar__item">
+                <li class="navbar__item">
+                    <a class="navbar__link" href="../shop/shop.html">SHOP</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="./register.html">REGISTRARSE</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="./login.html">INGRESAR</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="../contact.html">CONTACTO</a>
+                </li>
+            </ul>
+            <picture class="footer-isotipo">
+                <img src="../../img/branding/isotype.svg" alt="Isotipo de la marca Funkoshop" />
+            </picture>
+        </nav>
+        <p class="footer__copy">All rights reserved 2023 - Funkoshop &copy;</p>
+    </footer>
+</body>
+
+</html>
