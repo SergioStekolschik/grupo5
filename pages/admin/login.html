@@ -32,26 +32,27 @@
             </ul>
         </nav>
     </header>
-    <main>
-        <section class="container">
-            <h2>INGRESAR A MI CUENTA</h2>
-            <span>
-                <form action="URL-Destino" method="post" enctype="multipart/form-data" class="container">
-
-                    <label for="email">Email:</label>
-                    <input type="email" name="email" id="email" value="e-mail"> <br>
-
-                    <label for="contrasena">Contrase&ntilde;a:</label>
-                    <input type="texpassword" name="contrasena" id="password"> <br>
-
-
-                    <input type="submit" value="Ingresar">
-
-                    <input type="checkbox" name="recordame" id="recordame">
-                    <label for="recordame">Recordame</label>
-                </form>
-                <a href="./pages/shop.html">Olvid&eacute; mi contrase&ntilde;a</a>
-            </span>
+    <main class="container">    
+        <section class="login__container">
+            <h2 class="login__title">INGRESAR A MI CUENTA</h2>
+            <form form action="URL-Destino" method="post" enctype="multipart/form-data" id="login__form">
+                <div class="login__bloque">
+                    <label for="email" class="login__label">Email:</label>
+                    <input type="email" class="login__input" name="email" placeholder="@mail.com" >
+                </div>
+                <div class="login__bloque">
+                    <label for="contrasena" class="login__label">Contraseña:</label>
+                    <input type="texpassword" name="contrasena" class="login__input" placeholder="******">
+                </div>
+                <div class="login__bloque">
+                    <button type="submit" class="login__btn">Ingresar</button>
+                    <div class="login__recordarme">
+                        <input type="checkbox" name="recordarme" class="recordarme">
+                        <label for="recordame" class="login__label">Recordarme</label>
+                    </div>
+                </div>
+            </form>
+            <a href="./pages/shop.html" class="login__link">Olvidé mi contraseña</a>
         </section>
     </main>
     <footer class="footer">
