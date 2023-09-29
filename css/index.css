@@ -655,3 +655,162 @@ button {
 }
 
 
+
+/* Contact */
+
+main section.contact {
+    width: 60%;
+    margin: 50px auto;
+}
+
+main section.contact h1 {
+    font-size: 46px;
+    font-weight: 700;
+    color: #111111;
+    text-align: center;
+    font-family: var(--alternative-font);
+}
+
+@media screen and (max-width: 768px) {
+    main section.contact h1 {
+        font-size: 38px;
+    }
+}
+
+main section.contact form {
+    width: 100%;
+    margin: 50px auto 10px auto;
+}
+
+main section.contact form label {
+    text-align: center;
+    font-family: var(--base-font);
+    font-weight: 500;
+    font-size: 20px;
+    margin: 50px auto 5px auto;
+    display: block;
+}
+
+
+main section.contact form input[type="text"],
+select,
+textarea {
+    display: block;
+    margin: 5px auto 30px auto;
+    border: 2px solid var(--dark-bg-solid);
+    font-family: var(--base-font);
+    border-radius: 6px;
+    font-size: 16px;
+    padding: 5px 10px;
+    line-height: 1.5;
+}
+
+main section.contact form select option {
+    font-size: 16px;
+    padding: 10px;
+    line-height: 1.5;
+}
+
+main section.contact form textarea {
+    width: 100%;
+    height: 200px;
+}
+
+@media screen and (max-width: 1366px) {
+    main section.contact {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    main section.contact {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    main section.contact {
+        width: 90%;
+    }
+}
+
+main section.contact form .name-email {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 100px;
+    margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+    main section.contact form .name-email {
+        flex-flow: column wrap;
+        gap: 50px;
+    }
+}
+
+main section.contact form .name-email input[type="text"] {
+    margin: 5px auto 0 auto;
+}
+
+main section.contact form .name-email label {
+    margin: 0 auto 5px auto;
+}
+
+main section.contact form .buttons {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 70px;
+    margin: 60px auto;
+}
+
+@media screen and (max-width: 768px) {
+    main section.contact form .buttons {
+        flex-flow: column wrap;
+        gap: 30px;
+    }
+}
+
+main section.contact form .buttons input {
+    outline: none;
+    font-family: var(--base-font);
+    font-size: 20px;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 12px 60px;
+    border-radius: 50px;
+    line-height: 1.5;
+    cursor: pointer;
+    transition: 300ms;
+}
+
+main section.contact form .buttons input[type="submit"] {
+    background-color: var(--primary-solid);
+    border: 3px solid var(--primary-solid);
+    color: var(--light-font-solid);
+}
+
+main section.contact form .buttons input[type="submit"]:hover {
+    background-color: var(--white-font-solid);
+    color: var(--primary-solid);
+    transition: 300ms;
+}
+
+main section.contact form .buttons input[type="reset"] {
+    border: 3px solid var(--dark-bg-solid);
+    background-color: var(--dark-bg-solid);
+    color: var(--light-font-solid);
+}
+
+main section.contact form .buttons input[type="reset"]:hover {
+    background-color: var(--white-font-solid);
+    color: var(--dark-bg-solid);
+    transition: 300ms;
+}
+
+
