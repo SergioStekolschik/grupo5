@@ -8,6 +8,7 @@
     <meta name="description" content="HTML">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../css/pages/shop.css">
 </head>
 
 <body>
@@ -35,13 +36,13 @@
                     </ul>
                 </li>
                 <li class="navbar__item">
-                    <a class="navbar__link" href="./pages/contact.html">CONTACTO</a>
+                    <a class="navbar__link" href="../contact.html">CONTACTO</a>
                 </li>
                 <li class="navbar__item">
                     <a class="navbar__link" href="../admin/login.html">LOGIN</a>
                 </li>
                 <li class="navbar__item">
-                    <a class="navbar__cart" href="./pages/shop/cart.html">
+                    <a class="navbar__cart" href="./cart.html">
                         <img src="../../img/icons/cart-icon.svg" alt="Icono de carrito" />
                     </a>
                 </li>
@@ -52,8 +53,10 @@
     <main class="container">
 
         <div class="shop">
+
             <aside>
                 <form action="" method="" enctype="">
+
                     <label for="item">Buscar</label>
                     <input type="text" name="item" placeholder="item o categor&iacute;a">
                     <label for="order">Ordenar por</label>
@@ -87,11 +90,13 @@
                     <label for="faves" class="inline">Favoritos</label>
                 </form>
             </aside>
-            <section section class="slider">
+
+            <section class="slider">
+
                 <ul class="slider__items">
                     <li class="slider__item">
                         <article class="card-item">
-                            <a class="card-item__link" href="#">
+                            <a class="card-item__link" href="./item.html">
                                 <picture class="card-item__cover">
                                     <span class="card-item__tag">Nuevo</span>
                                     <img class="card-item__img--front" src="../../img/star-wars/trooper-1.webp"
@@ -111,7 +116,7 @@
 
                     <li class="slider__item">
                         <article class="card-item">
-                            <a class="card-item__link" href="#">
+                            <a class="card-item__link" href="./item.html">
                                 <picture class="card-item__cover">
                                     <span class="card-item__tag">Nuevo</span>
                                     <img class="card-item__img--front" src="../../img/pokemon/pidgeotto-1.webp"
@@ -131,7 +136,7 @@
 
                     <li class="slider__item">
                         <article class="card-item">
-                            <a class="card-item__link" href="#">
+                            <a class="card-item__link" href="./item.html">
                                 <picture class="card-item__cover">
                                     <span class="card-item__tag">Nuevo</span>
                                     <img class="card-item__img--front" src="../../img/harry-potter/luna-1.webp"
@@ -148,11 +153,10 @@
                             </a>
                         </article>
                     </li>
-                    </ul>
-                    <ul class="slider__items">
+
                     <li class="slider__item">
                         <article class="card-item">
-                            <a class="card-item__link" href="#">
+                            <a class="card-item__link" href="./item.html">
                                 <picture class="card-item__cover">
                                     <span class="card-item__tag">Nuevo</span>
                                     <img class="card-item__img--front" src="../../img/star-wars/trooper-1.webp"
@@ -172,7 +176,7 @@
 
                     <li class="slider__item">
                         <article class="card-item">
-                            <a class="card-item__link" href="#">
+                            <a class="card-item__link" href="./item.html">
                                 <picture class="card-item__cover">
                                     <span class="card-item__tag">Nuevo</span>
                                     <img class="card-item__img--front" src="../../img/pokemon/pidgeotto-1.webp"
@@ -192,7 +196,7 @@
 
                     <li class="slider__item">
                         <article class="card-item">
-                            <a class="card-item__link" href="#">
+                            <a class="card-item__link" href="./item.html">
                                 <picture class="card-item__cover">
                                     <span class="card-item__tag">Nuevo</span>
                                     <img class="card-item__img--front" src="../../img/harry-potter/luna-1.webp"
@@ -209,11 +213,10 @@
                             </a>
                         </article>
                     </li>
-                </ul>
-                <ul class="slider__items">
+
                     <li class="slider__item">
                         <article class="card-item">
-                            <a class="card-item__link" href="#">
+                            <a class="card-item__link" href="./item.html">
                                 <picture class="card-item__cover">
                                     <span class="card-item__tag">Nuevo</span>
                                     <img class="card-item__img--front" src="../../img/star-wars/trooper-1.webp"
@@ -233,7 +236,7 @@
 
                     <li class="slider__item">
                         <article class="card-item">
-                            <a class="card-item__link" href="#">
+                            <a class="card-item__link" href="./item.html">
                                 <picture class="card-item__cover">
                                     <span class="card-item__tag">Nuevo</span>
                                     <img class="card-item__img--front" src="../../img/pokemon/pidgeotto-1.webp"
@@ -251,9 +254,9 @@
                         </article>
                     </li>
 
-                    <li>
+                    <li class="slider__item">
                         <article class="card-item">
-                            <a class="card-item__link" href="#">
+                            <a class="card-item__link" href="./item.html">
                                 <picture class="card-item__cover">
                                     <span class="card-item__tag">Nuevo</span>
                                     <img class="card-item__img--front" src="../../img/harry-potter/luna-1.webp"
@@ -274,13 +277,13 @@
 
                 <section class="pagination">
                     <ul class="pages">
-                        <li><i class="fa-solid fa-chevron-left"></i></li>
+                        <li><iconify-icon icon="ep:arrow-left-bold" /></li>
                         <li class="active">1</li>
                         <li class="link"><a href="#">2</a></li>
                         <li>...</li>
                         <li class="link"><a href="#">9</a></li>
                         <li class="link"><a href="#">10</a></li>
-                        <li class="link"><a href="#"><i class="fa-solid fa-chevron-right"></i></a></li>
+                        <li class="link"><a href="#"><iconify-icon icon="ep:arrow-right-bold" /></a></li>
                     </ul>
                 </section>
 
@@ -293,6 +296,7 @@
 
 
     </main>
+
     <footer class="footer">
         <nav class="navbar container">
             <ul class="navbar__item">
@@ -315,7 +319,7 @@
         </nav>
         <p class="footer__copy">All rights reserved 2023 - Funkoshop &copy;</p>
     </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js" />
 </body>
-
 </html>

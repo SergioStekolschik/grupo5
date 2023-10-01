@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-
 <html lang="es">
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,6 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.theme.min.css">
     <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../css/shop.css">
 </head>
 
 <body>
@@ -38,53 +37,52 @@
                     </ul>
                 </li>
                 <li class="navbar__item">
-                    <a class="navbar__link" href="./pages/contact.html">CONTACTO</a>
+                    <a class="navbar__link" href="../contact.html">CONTACTO</a>
                 </li>
                 <li class="navbar__item">
                     <a class="navbar__link" href="../admin/login.html">LOGIN</a>
                 </li>
                 <li class="navbar__item">
-                    <a class="navbar__cart" href="./pages/shop/cart.html">
+                    <a class="navbar__cart" href="./cart.html">
                         <img src="../../img/icons/cart-icon.svg" alt="Icono de carrito" />
                     </a>
                 </li>
             </ul>
         </nav>
     </header>
-    <main class="main container">
-       
-        <section class="item container">
 
+    <main class="main container item-main">
+        <section class="item container">
             <article class="item__content">
-                <p class="item__licence">STAR WARS</p>
-                <h2 class="item__name">BABY YODA BLUEBALL</h4>
-                    <p class="item__content">Figura coleccionable de Baby Yoda (Grogu) - The Mandalorian Saga, edición
-                        limitada."</p>
+
+                <picture class="item__cover">
+                    <img class="card-item__img--front" src="../../img/star-wars/baby-yoda-1.webp" alt="Figura coleccionable Funko de Baby Yoda de la serie Mandalorian" />
+                    <img class="card-item__img--back" src="../../img/star-wars/baby-yoda-box.webp" alt="Figura coleccionable Funko de Baby Yoda de la serie Mandalorian en caja" />
+                </picture>
+
+                <div class="item-desc">
+                    <p class="item__licence">STAR WARS</p>
+                    <h2 class="item__name">BABY YODA BLUEBALL</h2>
+                    <p class="item__content">Figura coleccionable de Baby Yoda (Grogu) - The Mandalorian Saga, edición limitada.</p>
                     <h2 class="item__price">$ 1799,99</h2>
                     <div class="item__cart">
-
                         <input class="item__input" type="text" name="quantity" id="quantity" placeholder="0">
                         <div class="item__quantity">
                             <button id="add" class="item__quantity__mas" type="button">+</button>
                             <button id="subtract" class="item__quantity-" type="button">-</button>
                         </div>
-
-                        <button class="item__submit btn btn--primary btn--medium" type="submit">Agregar al
-                            carrito</button>
+                        <button class="item__submit btn btn--primary btn--medium" type="submit">Agregar al carrito</button>
                     </div>
-                    <p class="item__promo"><a href="">ver metodo de pago</a> - 3 CUOTAS SIN INTERÉS</p>
+                    <p class="item__promo"><a href="">Ver métodos de pago</a> - 3 CUOTAS SIN INTERÉS</p>
+                </div>
+
             </article>
-            <a href=".../../index.html"></a>
-            <picture class="item__cover">
 
-                <img class="card-item__img--front" src="../../img/star-wars/baby-yoda-1.webp"
-                    alt="Figura coleccionable Funco de Baby Yoda de la serie Mandalorian" />
-                <img class="card-item__img--back" src="../../img/star-wars/baby-yoda-box.webp"
-                    alt="Figura coleccionable Funco de Baby Yoda de la serie Mandalorian en caja" />
 
-            </picture>
-            </a>
+
         </section>
+
+
         <section class="slider container glide">
             <h2 class="slider__title">&Uacute;ltimos lazamientos</h2>
             <div class="glide__track" data-glide-el="track">
@@ -155,7 +153,10 @@
                         icon="tabler:chevron-right"></iconify-icon></button>
             </div>
         </section>
+
     </main>
+
+
     <footer class="footer">
         <nav class="navbar container">
             <ul class="navbar__item">
