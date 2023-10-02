@@ -1,58 +1,63 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Home | Funkoshop</title>
-    <meta name="description" content="HTML" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Carrito | Funkoshop</title>
+    <meta name="description" content="HTML">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="" />
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../css/pages/shop.css">
   </head>
+
   <body>
     <header>
-      <nav>
-        <picture>
-          <a href="./index.html">
-            <img
-              src="../img/branding/logo_light_horizontal.svg"
-              alt="Isologotipo de la marca Funkoshop"
-            />
-          </a>
-        </picture>
-        <ul>
-          <li>
-            <a href="./pages/shop.html" rel="noopener noreferrer">SHOP</a>
-          </li>
-          <li>
-            <a href="./pages/contact.html" rel="noopener noreferrer"
-              >CONTACTO</a
-            >
-          </li>
-          <li>
-            <a href="./pages/login.html" rel="noopener noreferrer">LOGIN</a>
-          </li>
-          <li>
-            <a href="./pages/card.html" rel="noopener noreferrer">
-              <img src="../img/icons/cart-icon.svg" alt="Icono de carrito" />
-            </a>
-          </li>
-        </ul>
+      <nav class="navbar container">
+          <picture class="navbar__logo">
+              <a href="../../index.html">
+                  <img src="../../img/branding/logo_light_horizontal.svg" alt="Isologotipo de la marca Funkoshop" />
+              </a>
+          </picture>
+          <ul class="navbar__menu">
+              <li class="navbar__item with-submenu">
+                  <a class="navbar__link with-icon" href="./shop.html">SHOP<iconify-icon
+                          icon="tabler:chevron-down"></iconify-icon></a>
+                  <ul class="submenu">
+                      <li class="submenu__item">
+                          <a href="#" class="submenu__link">Funkos</a>
+                      </li>
+                      <li class="submenu__item">
+                          <a href="#" class="submenu__link">Remeras</a>
+                      </li>
+                      <li class="submenu__item">
+                          <a href="#" class="submenu__link">Llaveros</a>
+                      </li>
+                  </ul>
+              </li>
+              <li class="navbar__item">
+                  <a class="navbar__link" href="../contact.html">CONTACTO</a>
+              </li>
+              <li class="navbar__item">
+                  <a class="navbar__link" href="../admin/login.html">LOGIN</a>
+              </li>
+              <li class="navbar__item">
+                  <a class="navbar__cart" href="./cart.html">
+                      <img src="../../img/icons/cart-icon.svg" alt="Icono de carrito" />
+                  </a>
+              </li>
+          </ul>
       </nav>
     </header>
 
-    <aside></aside>
     <main>
       <section>
         <h2>últimos lazamientos</h2>
         <ul>
           <li>
             <article>
-              <a href="">
+              <a href="#">
                 <picture>
-                  <img
-                    src="../img/star-wars/trooper-1.webp"
-                    alt="Figura coleccionable Funco de Stormtrooper de la serie Mandalorian"
-                  />
+                  <img src="../img/star-wars/trooper-1.webp" alt="Figura coleccionable Funco de Stormtrooper de la serie Mandalorian"/>
                 </picture>
                 <div>
                   <p>STAR WARS</p>
@@ -65,12 +70,9 @@
           </li>
           <li>
             <article>
-              <a href="">
+              <a href="#">
                 <picture>
-                  <img
-                    src="../img/pokemon/pidgeotto-1.webp"
-                    alt="Figura coleccionable Funco de Pidgeotto de la serie Pokemon"
-                  />
+                  <img src="../img/pokemon/pidgeotto-1.webp" alt="Figura coleccionable Funco de Pidgeotto de la serie Pokemon" />
                 </picture>
                 <div>
                   <p>POKEMON</p>
@@ -83,12 +85,9 @@
           </li>
           <li>
             <article>
-              <a href="">
+              <a href="#">
                 <picture>
-                  <img
-                    src="../img/harry-potter/luna-1.webp"
-                    alt="Figura coleccionable Funco de Luna Lovegood de la pelicula Harry Potter"
-                  />
+                  <img src="../img/harry-potter/luna-1.webp" alt="Figura coleccionable Funco de Luna Lovegood de la pelicula Harry Potter" />
                 </picture>
                 <div>
                   <p>HARRY POTTER</p>
@@ -105,12 +104,9 @@
         <ul>
           <li>
             <article>
-              <a href="">
+              <a href="#">
                 <picture>
-                  <img
-                    src="../img/star-wars/trooper-1.webp"
-                    alt="Figura coleccionable Funco de Stormtrooper de la serie Mandalorian"
-                  />
+                  <img src="../img/star-wars/trooper-1.webp" alt="Figura coleccionable Funco de Stormtrooper de la serie Mandalorian"/>
                 </picture>
                 <div>
                   <p>STAR WARS</p>
@@ -123,12 +119,9 @@
           </li>
           <li>
             <article>
-              <a href="">
+              <a href="#">
                 <picture>
-                  <img
-                    src="../img/pokemon/pidgeotto-1.webp"
-                    alt="Figura coleccionable Funco de Pidgeotto de la serie Pokemon"
-                  />
+                  <img src="../img/pokemon/pidgeotto-1.webp" alt="Figura coleccionable Funco de Pidgeotto de la serie Pokemon"/>
                 </picture>
                 <div>
                   <p>POKEMON</p>
@@ -141,12 +134,9 @@
           </li>
           <li>
             <article>
-              <a href="">
+              <a href="#">
                 <picture>
-                  <img
-                    src="../img/harry-potter/luna-1.webp"
-                    alt="Figura coleccionable Funco de Luna Lovegood de la pelicula Harry Potter"
-                  />
+                  <img src="../img/harry-potter/luna-1.webp" alt="Figura coleccionable Funco de Luna Lovegood de la pelicula Harry Potter"/>
                 </picture>
                 <div>
                   <p>HARRY POTTER</p>
@@ -163,12 +153,9 @@
         <ul>
           <li>
             <article>
-              <a href="">
+              <a href="#">
                 <picture>
-                  <img
-                    src="../img/star-wars/trooper-1.webp"
-                    alt="Figura coleccionable Funco de Stormtrooper de la serie Mandalorian"
-                  />
+                  <img src="../img/star-wars/trooper-1.webp" alt="Figura coleccionable Funco de Stormtrooper de la serie Mandalorian"/>
                 </picture>
                 <div>
                   <p>STAR WARS</p>
@@ -181,12 +168,9 @@
           </li>
           <li>
             <article>
-              <a href="">
+              <a href="#">
                 <picture>
-                  <img
-                    src="../img/pokemon/pidgeotto-1.webp"
-                    alt="Figura coleccionable Funco de Pidgeotto de la serie Pokemon"
-                  />
+                  <img src="../img/pokemon/pidgeotto-1.webp" alt="Figura coleccionable Funco de Pidgeotto de la serie Pokemon"/>
                 </picture>
                 <div>
                   <p>POKEMON</p>
@@ -199,12 +183,9 @@
           </li>
           <li>
             <article>
-              <a href="">
+              <a href="#">
                 <picture>
-                  <img
-                    src="../img/harry-potter/luna-1.webp"
-                    alt="Figura coleccionable Funco de Luna Lovegood de la pelicula Harry Potter"
-                  />
+                  <img src="../img/harry-potter/luna-1.webp" alt="Figura coleccionable Funco de Luna Lovegood de la pelicula Harry Potter"/>
                 </picture>
                 <div>
                   <p>HARRY POTTER</p>
@@ -217,44 +198,30 @@
           </li>
         </ul>
       </section>
-      <section></section>
     </main>
-    <footer>
-      <section>
-        <nav>
-          <ul>
-            <li>
-              <a href="./pages/shop.html" rel="noopener noreferrer">SHOP</a>
-            </li>
-            <li>
-              <a href="./pages/register.html" rel="noopener noreferrer"
-                >REGISTRARSE</a
-              >
-            </li>
-            <li>
-              <a href="./pages/login.html" rel="noopener noreferrer"
-                >INGRESAR</a
-              >
-            </li>
-            <li>
-              <a href="./pages/contact.html" rel="noopener noreferrer"
-                >CONTACTO</a
-              >
-            </li>
+
+    <footer class="footer">
+      <nav class="navbar container">
+          <ul class="navbar__item">
+              <li class="navbar__item">
+                  <a class="navbar__link" href="./shop.html">SHOP</a>
+              </li>
+              <li class="navbar__item">
+                  <a class="navbar__link" href="../admin/register.html">REGISTRARSE</a>
+              </li>
+              <li class="navbar__item">
+                  <a class="navbar__link" href="../admin/login.html">INGRESAR</a>
+              </li>
+              <li class="navbar__item">
+                  <a class="navbar__link" href="../contact.html">CONTACTO</a>
+              </li>
           </ul>
-          <picture>
-            <img
-              src="../img/branding/isotype.svg"
-              alt="Isotipo de la marca Funkoshop"
-              decoding="async"
-              width="25"
-              height="25"
-            />
+          <picture class="footer-isotipo">
+              <img src="../../img/branding/isotype.svg" alt="Isotipo de la marca Funkoshop">
           </picture>
-        </nav>
-        <p>All rights reserved 2023 - Funkoshop &copy;</p>
-      </section>
+      </nav>
+      <p class="footer__copy">All rights reserved 2023 - Funkoshop &copy;</p>
     </footer>
-    <script src="" async defer></script>
+
   </body>
 </html>
