@@ -1,12 +1,13 @@
 <!DOCTYPE html>
+
 <html lang="es">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Register | Funkoshop</title>
     <meta name="description" content="HTML">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../css/index.css">
     <link rel="stylesheet" href="../../css/admin.css">
 </head>
 
@@ -31,38 +32,46 @@
             </ul>
         </nav>
     </header>
-
-    <main>
-        <section class="container">
-            <h2>CREA TU CUENTA</h2>
-            <p>Completa el formulario para ser parte del mundo de los Funkos</p>
-            <span>
-                <form action="URL-Destino" method="post" enctype="multipart/form-data" class="container">
-
-                    <label for="nombre">Nombre:</label>
-                    <input type="text" name="nombre" id="nombre"><br>
-
-                    <label for="apellido">Apellido:</label>
-                    <input type="text" name="apellido" id="apellido"><br>
-
-                    <label for="email">Email:</label>
-                    <input type="email" name="email" id="email" value="e-mail"> <br>
-
-                    <label for="contrasena">Contrase&ntilde;a:</label>
-                    <input type="texpassword" name="contrasena" id="password"> <br>
-
-                    <label for="repitacontrasena">Repita Contrase&ntilde;a:</label>
-                    <input type="texpassword" name="repitacontrasena" id="repitacontrasena"> <br>
-
-                    <input type="submit" value="Registrar">
-
+    <main id="register" class="container">
+        <div class="register__header">
+            <h2 class="register__title">CREA TU CUENTA</h2>
+            <p class="register__subtitle">Completa el formulario para ser parte del mundo de los Funkos</p>
+        </div>
+        <form class="register__form" action="/register" method="POST" enctype="multipart/form-data" class="container">
+            <div class="form__box--grid">
+                <label class="form__label" for="nombre">Nombre:</label>
+                <input class="form__input" type="text" name="nombre" id="nombre" placeholder="nombre" required>
+            </div>
+            <div class="form__box--grid">
+                <label class="form__label" for="apellido">Apellido:</label>
+                <input class="form__input" type="text" name="apellido" id="apellido" placeholder="apellido" required>
+            </div>
+            <div class="form__box--grid">
+                <label class="form__label" for="email">Email:</label>
+                <input class="form__input" type="email" name="email" id="email" placeholder="johndoe@email.com"
+                    required>
+            </div>
+            <div class="form__box--grid">
+                <label class="form__label" for="contrasena">Contrase&ntilde;a:</label>
+                <input class="form__input" type="password" name="contrasena" id="password"
+                    placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;"
+                    required>
+            </div>
+            <div class="form__box--grid">
+                <label class="form__label" for="repitacontrasena">Repita Contrase&ntilde;a:</label>
+                <input  class="form__input" type="password" name="repitacontrasena" id="repitacontrasena"
+                    placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;"
+                    required>
+            </div>
+            <div class="form__submission">
+                <input class="form__btn" type="submit" value="Registrar">
+                <div class="form__terms">
                     <input type="checkbox" name="teminos" id="terminos">
                     <label for="terminos">Acepto T&eacute;rminos y Condiciones</label>
-                </form>
-            </span>
-        </section>
+                </div>
+            </div>
+        </form>
     </main>
-
     <footer class="footer">
         <nav class="navbar container">
             <ul class="navbar__item">
@@ -86,4 +95,5 @@
         <p class="footer__copy">All rights reserved 2023 - Funkoshop &copy;</p>
     </footer>
 </body>
+
 </html>
