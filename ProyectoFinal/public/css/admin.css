@@ -80,6 +80,12 @@ img {
     margin: 0 auto;
 }
 
+.grid-fixed {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+
 /* Header */
 
 header {
@@ -245,7 +251,7 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: stretch;
-    gap: var(--spacing-48);
+    gap: var(--spacing-36);
 }
 
 #edit {
