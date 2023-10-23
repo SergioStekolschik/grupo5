@@ -7,18 +7,18 @@
     --primary-500: rgba(255,51,51,0.5);
     --primary-300: rgba(255,51,51,0.3);
 
-    --secondary-solid: #1D8485;
-    --secondary-900: rgb(29,132,189,0.9);
-    --secondary-500: rgb(29,132,189,0.5);
-    --secondary-300: rgb(29,132,189,0.3);
+    --secondary-solid: #1D84B5;
+    --secondary-900: rgb(29,132,181,0.9);
+    --secondary-500: rgb(29,132,181,0.5);
+    --secondary-300: rgb(29,132,181,0.3);
 
-    --dark-solid: #1F1f1F;
+    --dark-solid: #1F1F1F;
     --dark-900: rgb(31,31,31,0.9);
     --dark-500: rgb(31,31,31,0.5);
     --dark-300: rgb(31,31,31,0.3);
 
     --dark-bg-solid: #30343F;
-    --light-bg-solid: #FAFAFF; 
+    --light-bg-solid: #FAFAFF;
     --dark-font-solid: #111111;
     --light-font-solid: #FFFFFF;
 
@@ -35,13 +35,13 @@
     --font-small: 1.6em;
     --font-xsmall: 1.4em;
 
-    /* Spacing */
+    /* Spacings */
     --spacing-128: 12.8rem;
     --spacing-68: 6.8rem;
     --spacing-36: 3.6rem;
     --spacing-28: 2.8rem;
     --spacing-24: 2.4rem;
-    --spacing-20: 2.0rem;
+    --spacing-20: 2rem;
     --spacing-16: 1.6rem;
     --spacing-12: 1.2rem;
     --spacing-8: 0.8rem;

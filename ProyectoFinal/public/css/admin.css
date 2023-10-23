@@ -7,18 +7,19 @@
     --primary-500: rgba(255,51,51,0.5);
     --primary-300: rgba(255,51,51,0.3);
 
-    --secondary-solid: #1D8485;
-    --secondary-900: rgb(29,132,189,0.9);
-    --secondary-500: rgb(29,132,189,0.5);
-    --secondary-300: rgb(29,132,189,0.3);
+    --secondary-solid: #1D84B5;
+    --secondary-900: rgb(29,132,181,0.9);
+    --secondary-500: rgb(29,132,181,0.5);
+    --secondary-300: rgb(29,132,181,0.3);
 
-    --dark-solid: #1F1f1F;
+    --dark-solid: #1F1F1F;
     --dark-900: rgb(31,31,31,0.9);
     --dark-500: rgb(31,31,31,0.5);
     --dark-300: rgb(31,31,31,0.3);
 
     --dark-bg-solid: #30343F;
-    --light-bg-solid: #FAFAFF; 
+    --light-bg-solid: #FAFAFF;
+    --white-bg: #FFFFFF;
     --dark-font-solid: #111111;
     --light-font-solid: #FFFFFF;
 
@@ -35,13 +36,13 @@
     --font-small: 1.6em;
     --font-xsmall: 1.4em;
 
-    /* Spacing */
+    /* Spacings */
     --spacing-128: 12.8rem;
     --spacing-68: 6.8rem;
     --spacing-36: 3.6rem;
     --spacing-28: 2.8rem;
     --spacing-24: 2.4rem;
-    --spacing-20: 2.0rem;
+    --spacing-20: 2rem;
     --spacing-16: 1.6rem;
     --spacing-12: 1.2rem;
     --spacing-8: 0.8rem;
@@ -126,7 +127,7 @@ header {
 .with-icon {
     display: flex;
     align-items: center;
-    gap: var(--spacing-8);    
+    gap: var(--spacing-8);
 }
 
 /* FOOTER */
@@ -383,9 +384,15 @@ textarea::placeholder {
 
 .form__btn {
     font-size: var(--font-xsmall);
+    background-color: var(--primary-solid);
+    cursor: pointer;
+    color: var(--light-font-solid);
+    border: 2px solid var(--primary-solid);
+    padding: var(--spacing-12) var(--spacing-12);
+    margin: 0 auto; 
+    transition: .3s;
 }
 
-/*
 .form__link {
     color: var(--secondary-solid);
 }
@@ -393,8 +400,6 @@ textarea::placeholder {
 .form__link:hover {
     color: var(--secodary-300);
 }
-*/
-
 
 #admin {
     margin: var(--spacing-68) auto;
@@ -407,10 +412,6 @@ textarea::placeholder {
     margin-bottom: var(--spacing-36);
 }
 
-.admin__icon {
-    font-size: var(--font-xlarge);
-}
-
 .admin__search-bar {
     font-size: var(--font-medium);
     padding: var(--spacing-8) var(--spacing-8);
@@ -418,6 +419,10 @@ textarea::placeholder {
     border-radius: 6px;
     outline: none;
     flex: 0 0 35%;
+}
+
+.admin__icon {
+    font-size: var(--font-xlarge);
 }
 
 .admin__list {
@@ -468,6 +473,7 @@ textarea::placeholder {
 
 .admin-table__header {
     margin-bottom: var(--spacing-24);
+    background-color: var(--white-bg);
 }
 
 #register {
@@ -506,3 +512,11 @@ textarea::placeholder {
 #register .form__terms {
     font-size: var(--font-small);
 }
+
+.iconify-icon-pencil {
+    color: var(--secondary-solid);
+  }
+
+.iconify-icon-trash {
+    color: var(--primary-solid);
+  }
