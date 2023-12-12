@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Login | Funkoshop</title>
+    <meta name="description" content="HTML">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../css/admin.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar container">
+            <picture class="navbar__logo">
+                <a href="../../index.html">
+                    <img src="../../img/branding/logo_light_horizontal.svg" alt="Isologotipo de la marca Funkoshop" />
+                </a>
+            </picture>
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a class="navbar__link" href="../../index.html">VER TIENDA</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="./admin.html">ADMIN</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="./logout.html">SALIR</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">    
+        <section class="login__container">
+            <h2 class="login__title">INGRESAR A MI CUENTA</h2>
+            <form form action="URL-Destino" method="post" enctype="multipart/form-data" id="login__form">
+                <div class="login__bloque">
+                    <label for="email" class="login__label">Email:</label>
+                    <input type="email" class="login__input" name="email" placeholder="@mail.com" >
+                </div>
+                <div class="login__bloque">
+                    <label for="contrasena" class="login__label">Contraseña:</label>
+                    <input type="texpassword" name="contrasena" class="login__input" placeholder="******">
+                </div>
+                <div class="login__bloque">
+                    <button type="submit" class="login__btn">Ingresar</button>
+                    <div class="login__recordarme">
+                        <input type="checkbox" name="recordarme" class="recordarme">
+                        <label for="recordame" class="login__label">Recordarme</label>
+                    </div>
+                </div>
+            </form>
+            <a href="./pages/shop.html" class="login__link">Olvidé mi contraseña</a>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <nav class="navbar container">
+            <ul class="navbar__item">
+                <li class="navbar__item">
+                    <a class="navbar__link" href="../shop/shop.html">SHOP</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="./register.html">REGISTRARSE</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="./login.html">INGRESAR</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="../contact.html">CONTACTO</a>
+                </li>
+            </ul>
+            <picture class="footer-isotipo">
+                <img src="../../img/branding/isotype.svg" alt="Isotipo de la marca Funkoshop" />
+            </picture>
+        </nav>
+        <p class="footer__copy">All rights reserved 2023 - Funkoshop &copy;</p>
+    </footer>
+
+</body>
+</html>

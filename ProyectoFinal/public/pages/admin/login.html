@@ -1,83 +1,92 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Login | Funkoshop</title>
-    <meta name="description" content="HTML">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Funkoshop</title>
     <link rel="stylesheet" href="../../css/index.css">
-    <link rel="stylesheet" href="../../css/admin.css">
 </head>
-
-<body>
-    <header>
+<body class="grid-fixed">
+    <header class="page-header"> <!-- Inicio Header -->
         <nav class="navbar container">
-            <picture class="navbar__logo">
+            <picture class="nabvar__logo">
                 <a href="../../index.html">
-                    <img src="../../img/branding/logo_light_horizontal.svg" alt="Isologotipo de la marca Funkoshop" />
+                    <img src="../../img/branding/logo_light_horizontal.svg" alt="Isologotipo de la Marca Funkoshop">
                 </a>
             </picture>
             <ul class="navbar__menu">
-                <li class="navbar__item">
-                    <a class="navbar__link" href="../../index.html">VER TIENDA</a>
+                <li class="navbar__item with-submenu">
+                    <a class="navbar__link with-icon" href="./shop.html">SHOP<iconify-icon icon="tabler:chevron-down"></iconify-icon></a>
+                    <ul class="submenu">
+                        <li class="submenu__item">
+                            <a href="" class="submenu__link">Funkos</a>
+                        </li>
+                        <li class="submenu__item">
+                            <a href="" class="submenu__link">Remeras</a>
+                        </li>
+                        <li class="submenu__item">
+                            <a href="" class="submenu__link">LLaveros</a>
+                        </li>
+                    </ul>
                 </li>
+                <li>
+                    <a class="navbar__link" href="../contact.html">CONTACTO</a>
+                </li class="navbar__item">
+                <li>
+                    <a class="navbar__link" href="../admin/login.html">LOGIN</a>
+                </li class="navbar__item">
                 <li class="navbar__item">
-                    <a class="navbar__link" href="./admin.html">ADMIN</a>
-                </li>
-                <li class="navbar__item">
-                    <a class="navbar__link" href="./logout.html">SALIR</a>
+                    <a class="navbar__cart" href="../cart.html">
+                        <img src="../../img/icons/cart-icon.svg" alt="ícono de carrito">
+                    </a>
                 </li>
             </ul>
         </nav>
-    </header>
-
-    <main class="container">    
-        <section class="login__container">
+    </header> <!--   Fin Header -->
+    <main id="login" class="container">
             <h2 class="login__title">INGRESAR A MI CUENTA</h2>
-            <form form action="URL-Destino" method="post" enctype="multipart/form-data" id="login__form">
-                <div class="login__bloque">
-                    <label for="email" class="login__label">Email:</label>
-                    <input type="email" class="login__input" name="email" placeholder="@mail.com" >
+            <form class="login__form form" action="" method="post">
+                <div class="form__box--grid">
+                    <label class="form__label" for="email">Email:</label>
+                    <input class="form__input" type="text" name="email" id="email" placeholder="johndoe@email.com">
                 </div>
-                <div class="login__bloque">
-                    <label for="contrasena" class="login__label">Contraseña:</label>
-                    <input type="texpassword" name="contrasena" class="login__input" placeholder="******">
+                <div class="form__box--grid">
+                    <label class="form__label" for="password">Contraseña:</label>
+                    <input class="form__input" type="password" name="password" id="password" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;">
                 </div>
-                <div class="login__bloque">
-                    <button type="submit" class="login__btn">Ingresar</button>
-                    <div class="login__recordarme">
-                        <input type="checkbox" name="recordarme" class="recordarme">
-                        <label for="recordame" class="login__label">Recordarme</label>
+                <div class="form__submission">
+                    <input class="form__btn btn btn--primary btn--large" type="submit" value="Ingresar">
+                    <div class="form__remember">
+                        <input type="checkbox" name="remember" id="">
+                        <label for="">Recordarme</label>
                     </div>
                 </div>
+                <a class="form__link" href="">Olvidé mi contraseña</a>
             </form>
-            <a href="./pages/shop.html" class="login__link">Olvidé mi contraseña</a>
-        </section>
     </main>
-
     <footer class="footer">
         <nav class="navbar container">
             <ul class="navbar__item">
                 <li class="navbar__item">
-                    <a class="navbar__link" href="../shop/shop.html">SHOP</a>
+                    <a class="navbar__link" href="./pages/shop/shop.html">SHOP</a>
                 </li>
                 <li class="navbar__item">
                     <a class="navbar__link" href="./register.html">REGISTRARSE</a>
                 </li>
                 <li class="navbar__item">
-                    <a class="navbar__link" href="./login.html">INGRESAR</a>
+                    <a class="navbar__link" href="./admin/login.html">LOGIN</a>
                 </li>
                 <li class="navbar__item">
-                    <a class="navbar__link" href="../contact.html">CONTACTO</a>
+                    <a class="navbar__link" href="./pages/contact.html">CONTACTO</a>
                 </li>
             </ul>
-            <picture class="footer-isotipo">
-                <img src="../../img/branding/isotype.svg" alt="Isotipo de la marca Funkoshop" />
+            <picture>
+                <img src="../../img/branding/isotype.svg" alt="Isotipo de la marca Funkoshop">
             </picture>
         </nav>
         <p class="footer__copy">All rights reserved 2023 - Funkoshop &copy;</p>
     </footer>
-
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
 </body>
 </html>
