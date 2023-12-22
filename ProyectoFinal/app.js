@@ -1,8 +1,19 @@
 const express = require('express');
 const dotenv= require('dotenv');
-const cookieParser = require('cookie-parser')
+const session = require('express-session');
+const bodyParser = require('body-parser');
 
 const app = express();
+
+// Configuración de express-session
+app.use(session({
+  secret: 'miSecreto',
+  resave: false,
+  saveUninitialized: true,
+}));
+
+// Middleware para analizar datos de formulario
+app.use(bodyParser.urlencoded({ extended: true }));
 
 const methodOverride = require('method-override');
 
@@ -15,7 +26,7 @@ app.use(express.static(__dirname + '/public'));
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/src/views'); // specify the views directory
 
-//const mainRoutes = require('./src/routes/mainRoutes');
+const mainRoutes = require('./src/routes/mainRoutes');
 const shopRoutes = require(__dirname + '/src/routes/shopRoutes');
 const adminRoutes = require(__dirname + '/src/routes/adminRoutes');
 
@@ -27,10 +38,7 @@ app.use(express.json())
 
 dotenv.config({path: __dirname + '/.env'}); 
 
-//cookieParser.set
-app.set('cookieParser', 'dev');
-
-//app.use('/', mainRoutes);
+app.use('/', mainRoutes);
 app.use('/shop', shopRoutes);
 app.use('/admin', adminRoutes);
 

@@ -1,0 +1,127 @@
+<%- include('../partials/header') %>
+    <main class="main-container">
+        <section class="container-info-checkout">
+            <h1>CARRITO DE COMPRAS</h1>
+            <div class="fila_informacion">
+                <ul class="lista_informacion">
+                    <li class="detalle_checkout">Detalle de producto</li>
+                    <li class="cantidad_checkout">Cantidad</li>
+                    <li class="total_checkout">Total</li>
+                </ul>
+            </div>
+            <div id="listaDatos">
+            </div>    
+        </section>
+    </main>
+    <script>
+        let datosObtenidos = [];
+
+        function getOpening() {
+            return JSON.parse(localStorage.getItem("Carrito") || "null");
+        }
+
+        function cargarDatos() {
+            const listaDatos = document.getElementById('listaDatos');
+
+            // Llenar la lista de datos
+            let html = "";
+            let cantidad = 0;
+            let subtotal = 0;
+            let total = 0;
+            
+            // Hacer una solicitud al servidor para obtener los datos
+            const localStorage = getOpening();
+            localStorage.forEach((dato,index) => {
+                html += "<div class=\"fila-producto\">";
+                html += "   <div class=\"producto-info\">";
+                html += "       <div class=\"img_producto\">";
+                html += "           <img src=\"" + dato.front + "\" alt=\"\">";
+                html += "       </div>";
+                html += "       <div class=\"texto_producto\">";
+                html += "           <p class=\"titulo_producto_checkout\">" + dato.product_name + "</p>";
+                html += "           <p class=\"subtitulo_producto_checkout\">" + dato.licence_name + "</p>";
+                html += "           <p id=\"precio_" + index + "\" class=\"precio_checkout\">precio: " + dato.price + "</p>";
+                html += "       </div>";
+                html += "   </div>";
+                html += "   <div class=\"cantidad_info\">";
+                html += "       <input onblur=\"javascript:recalcular(" + index + ");\" id=\"cantidad_" + index + "\" type=\"text\" value=" + dato.quantity + ">";
+                html += "   </div>";
+                html += "   <div id=\"subtotalProducto_" + index + "\" class=\"total_info\">";
+                html += "       <p>"+ Number(dato.quantity) * Number(dato.price) + "</p>";
+                html += "   </div>";
+                html += "   <div class=\"eliminar_info\">";
+                html += "       <a href=\"\">";
+                html += "           <img src=\"/images/icons/borrar.png\" alt=\"\">";
+                html += "       </a>";
+                html += "   </div>";
+                html += "</div>";
+
+                cantidad += Number(dato.quantity);
+                subtotal += Number(dato.quantity) * Number(dato.price);
+                total += subtotal;
+            });
+
+            html +="<section>";
+            html +="    <div class=\"resumen-de-compra\">";
+            html +="        <div class=\"container-resumen\">";
+            html +="            <h2>RESUMEN</h2>";
+            html +="            <hr class=\"hr_resumen\">";
+            html +="            <div class=\"box_info\">";
+            html +="                <div class=\"cantidad_elementos_resumen\">";
+            html +="                    <p class=\"bold\">CANTIDAD</p>";
+            html +="                    <p id=\"cantidadTotal\">" + cantidad + "</p>";
+            html +="                </div>";
+            html +="                <div class=\"subtotal_elementos_resumen\">";
+            html +="                    <p class=\"bold\">SUBTOTAL</p>";
+            html +="                    <p id=\"subtotal\">" + subtotal +"</p>";
+            html +="                </div>";
+            html +="                <div class=\"envio_elementos_resumen\">";
+            html +="                    <p class=\"bold\">ENVIO</p>";
+            html +="                    <p>$0,00</p>";
+            html +="                </div>";
+            html +="                <div class=\"total_elementos_resumen\">";
+            html +="                    <p>TOTAL</p>";
+            html +="                    <p id=\"total\">" + total + "</p>";
+            html +="                </div>";
+            html +="            </div>";
+            html +="            <button class=\"pagar\">IR A PAGAR</button>";
+            html +="        </div>";
+            html +="    </div>";
+            html +="</section>";
+
+            listaDatos.innerHTML = html;
+        }
+        
+        function recalcular(id) {
+            const listaDatos = document.getElementById('listaDatos');
+
+            const index_precio ='precio_'+id
+            const index_cantidad ='cantidad_'+id
+            const index_subtotalProducto = 'subtotalProducto_'+id
+
+            const precioText = document.getElementById(index_precio).innerText;
+            const palabras = precioText.split(' ');
+            const price = Number(palabras[1]);
+
+            const quantity = Number(document.getElementById(index_cantidad).value);
+
+            const subtotalProducto = document.getElementById(index_subtotalProducto);     
+            const cantidad = document.getElementById('cantidadTotal');
+            const subtotal = document.getElementById('subtotal');
+            const total = document.getElementById('total');
+
+            console.log(quantity, subtotal, total);
+
+            subtotalProducto.innerText = quantity * price;
+            cantidad.innerText = quantity;
+            subtotal.innerText = quantity * price;
+            total.innerText = quantity * price;
+
+        }
+
+
+        // Cargar datos al cargar la página
+        cargarDatos();
+    </script>
+
+<%- include('../partials/footer') %>

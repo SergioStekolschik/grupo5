@@ -1,7 +1,7 @@
 <%- include('../partials/header_admin') %>
     <main id="edit" class="container grid-fixed">
         <h2 class="edit__title">EDITAR ITEM</h2>
-        <form class="edit__form" action="/admin/edit/<%= item.product_id %>?_method=PUT" method="POST" enctype="application/x-www-form-urlencoded">
+        <form class="edit__form" action="/admin/edit/<%= item.product_id %>?_method=PUT" method="POST"  enctype="multipart/form-data">
             <div class="form__flex">
                 <div class="form__box--flex">
                     <label class="form__label" for="category">Categor&iacute;a:</label>
@@ -26,7 +26,7 @@
                     placeholder="Kakashi Hatake Shippuden Saga" required />
             </div>
             <div>
-                <textarea name="description" id="description" cols="30" rows="10"
+                <textarea name="description" id="description" cols="30" rows="6"
                     placeholder="Descripci&oacute;n del producto" required>
                     <%= item.product_description %>
                 </textarea>
@@ -40,7 +40,7 @@
                 <div class="form__box--flex">
                     <label class="form__label" for="price">Precio:</label>
                     <div class="form__input--wrapper">
-                        <span>$</span><input class="form__input" type="number" name="price" id="price" value="<%= item.price %>
+                        <span>$</span><input class="form__input" type="number" name="price" id="price" value="<%= item.price %>"
                             data-type="currency" placeholder="0.000,00">
                     </div>
                 </div>
@@ -78,17 +78,23 @@
                 <input type="file" name="images" id="img" multiple>
             </div>
             <div class="form__box--flex">
+
                 <div class="edit__img">
+                    <% if (item.image_front) { %>    
                     <img src="/img<%= item.image_front %>" alt="<%= item.product_name %>">
+                    <% } %>
                     <p class="edit__img-side">Frente</p>
                 </div>
                 <div class="edit__img">
+                    <% if (item.image_back) { %>  
                     <img src="/img<%= item.image_back %>" alt="<%= item.product_name %> en caja">
-                    <p class="edit__img-side">Dorso</p>
+                    <% } %>                    
+                    <p class="edit__img-side">Dorso</p>					
                 </div>
             </div>
+			
             <div>
-                <input class="login__btn" type="submit" value="Modificar Producto">
+                <input class="form__btn btn btn--primary btn--large" type="submit" value="Modificar Producto">
             </div>
         </form>
     </main>

@@ -1,6 +1,10 @@
 const ItemsService = require('../services/itemService');
 
 module.exports = {
+  datos:  async (req, res) => {
+    const { data } = await ItemsService.getAllItems();
+    res.json(data);
+  },  
   shopView:  async (req, res) => {
     const { data } = await ItemsService.getAllItems();
     res.render('./shop/shop',
@@ -28,6 +32,12 @@ module.exports = {
     });
   },
   addItemToCart: (req, res) => res.send('Route to add a item to cart'),
-  cartView: (req, res) => res.send('Cart View Route'),
+  cartView: (req, res) => {
+    res.render('./shop/cart', {
+      view: {
+        title: "Carrito | Funkoshop"
+      }
+    });  
+  },
   checkout: (req, res) => res.send('Route to receive the selected products and init the buy process'),
 };

@@ -27,19 +27,34 @@ const createItem = async (item) => {
 }
 
 const editItem = async (item, id) => {
-  const itemSchema = {
-    product_name: item.name,
-    product_description: item.description,
-    price: item.price,
-    stock: item.stock,
-    discount: item.discount,
-    sku: item.sku,
-    dues: item.dues,
-    image_front: item.image_front,
-    image_back: item.image_back,
-    licence_id: item.collection,
-    category_id: item.category
-  }
+  console.log(item);
+  let itemSchema = {};
+  if (item.image_front && item.image_back)
+    itemSchema = {
+      product_name: item.name,
+      product_description: item.description,
+      price: item.price,
+      stock: item.stock,
+      discount: item.discount,
+      sku: item.sku,
+      dues: item.dues,
+      image_front: item.image_front,
+      image_back: item.image_back,
+      licence_id: item.collection,
+      category_id: item.category
+    }
+  else
+    itemSchema = {
+      product_name: item.name,
+      product_description: item.description,
+      price: item.price,
+      stock: item.stock,
+      discount: item.discount,
+      sku: item.sku,
+      dues: item.dues,
+      licence_id: item.collection,
+      category_id: item.category
+    }
 
   return await ItemModel.editItem(itemSchema, {product_id: id});
 }

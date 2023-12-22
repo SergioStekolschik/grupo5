@@ -1,0 +1,159 @@
+<%- include('../partials/header') %>
+    <main class="main-container">
+        <section class="container-info-checkout">
+        <h1>CARRITO DE COMPRAS</h1>
+        <div class="listaDatos">
+        </div>    
+        <hr>
+      <div class="fila_informacion">
+          <ul class="lista_informacion">
+              <li class="detalle_check">Detalle de producto</li>
+              <li class="cantidad_check">Cantidad</li>
+              <li class="total_class">Total</li>
+          </ul>
+      </div>
+      <!--producto1-->
+      <div class="fila-producto">
+          <div class="producto-info">
+              <div class="img_producto">
+                  <img src="/images/star-wars/baby-yoda-1.webp" alt="">
+              </div>
+              <div class="texto_producto">
+                  <p class="titulo_producto_check">BABY YODA BLUEBALL</p>
+                  <p class="subtitulo_producto_check">STAR WARS</p>
+                  <p class="precio_check">precio: $1799,99</p>
+              </div>
+          </div>
+
+          <div class="cantidad_info">
+              <input type="text">
+              <div class="botones">
+                  <button class="agregar">+</button>
+                  <button class="restar">-</button>
+              </div>
+          </div>
+          <div class="total_info">
+             <p>$3599</p>
+          </div>
+          <div class="eliminar_info">
+              <a href="">
+                  <img src="/images/icons/borrar.png" alt="">
+              </a>
+          </div>
+         
+      </div>
+
+      <!--producto2-->
+      <div class="fila-producto">
+          <div class="producto-info">
+              <div class="img_producto">
+                  <img src="/images/pokemon/pidgeotto-1.webp" alt="">
+              </div>
+              <div class="texto_producto">
+                  <p class="titulo_producto_check">PIDGEOTTO</p>
+                  <p class="subtitulo_producto_check">POKEMON</p>
+                  <p class="precio_check">precio: $1799,99</p>
+              </div>
+          </div>
+
+          <div class="cantidad_info">
+              <input type="text">
+              <div class="botones">
+                  <button class="agregar">+</button>
+                  <button class="restar">-</button>
+              </div>
+          </div>
+          <div class="total_info">
+             <p>$3599</p>
+          </div>
+          <div class="eliminar_info">
+              <a href="">
+                  <img src="/images/icons/borrar.png" alt="">
+              </a>
+          </div>
+         
+      </div>
+  </section>
+
+  <section>
+      <div class="resumen-de-compra">
+          <div class="container-resumen">
+              <h2>RESUMEN</h2>
+              <hr class="hr_resumen">
+              <div class="box_info">
+                  <div class="cantidad_elementos_res">
+                      <p class="bold">CANTIDAD</p>
+                      <p>2</p>
+                  </div>
+                  <div class="subtotal_elementos_res">
+                      <p class="bold">SUBTOTAL</p>
+                      <p>$7198</p>
+                  </div>
+                  <div class="envio_elementos_res">
+                      <p class="bold">ENVIO</p>
+                      <p>$0,00</p>
+                  </div>
+                  <hr>
+                  <div class="total_elementos_res">
+                      <p class="bold">TOTAL</p>
+                      <p>$7198</p>
+                  </div>
+              </div>
+              <button class="pagar">IR A PAGAR</button>
+          </div>
+      </div>
+  </section>
+   </main>
+    <script>
+        let datosObtenidos = [];
+
+        function publicar(listaDatos,datosPublicar) {
+            listaDatos.innerHTML = "";
+            // Llenar la lista de datos
+            let html = "";
+
+            html += "<header class=\"admin-table__header\">";
+            html += "    <h3>ID</h3>";
+            html += "    <h3>C&oacute;digo</h3>";
+            html += "    <h3>Nombre del Producto</h3>";
+            html += "    <h3>Categor&iacute;a</h3>";
+            html += "</header>";
+
+            datosPublicar.forEach((dato) => {
+                html +=  "<article class=\"admin-table__row\">";
+                html +=  "    <p>" + dato.product_id + "</p>";
+                html +=  "    <p>" + dato.sku + "</p>";
+                html +=  "    <p>" + dato.product_name + "</p>";
+                html +=  "    <p>" + dato.category_name + "</p>";
+                html +=  "    <a href=\"./edit/" + dato.product_id + "\"><iconify-icon icon=\"mdi:pencil\" class=\"iconify-icon-pencil\"></iconify-icon></a>";
+                html +=  "    <form action=\"/admin/delete/" + dato.product_id + "?_method=DELETE\" method=\"POST\">";
+                html +=  "        <button class=\"admin-table__btn-delete\" type=\"submit\">";
+                html +=  "            <iconify-icon icon=\"heroicons-solid:trash\" class=\"iconify-icon-trash\"></iconify-icon>";
+                html +=  "        </button>";
+                html +=  "    </form>";
+                html +=  "</article>";
+            });
+
+            console.log(html);
+            listaDatos.innerHTML = html;
+        }
+
+        function getOpening() {
+            return JSON.parse(localStorage.getItem("Carrito") || "null");
+        }
+
+        async function cargarDatos() {
+            const listaDatos = document.getElementById('listaDatos');
+
+            // Hacer una solicitud al servidor para obtener los datos
+            const localStorage = getOpening();
+            localStorage.forEach(dato => {
+                console.log(dato);
+            }); 
+        }
+        
+        // Cargar datos al cargar la página
+        cargarDatos();
+    </script>
+
+<%- include('../partials/footer') %>

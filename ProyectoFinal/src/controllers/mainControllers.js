@@ -10,7 +10,13 @@ module.exports = {
       collections: licences.data
     });
   },
-  contactView:(req, res) => res.send('Contact View Route'),
+  contactView:(req, res) => {
+    res.render('./main/contact', {
+      view: {
+        title: `Contact | Admin Funkoshop`
+      }
+    });
+  },
   aboutView:(req, res) => res.send('About View Route'),
   faqsView:(req, res) => res.send('FAQs View Route'),
 };

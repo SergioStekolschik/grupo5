@@ -32,3 +32,19 @@ III. Para instalar la librería de nodemon para no tener que reiniciar el servid
 ```
 npm install nodemon -D
 ```
+
+
+Para que funcione la mission 5 hay que correr los siguientes comandos en el CMD o bash (ya que las librería no fueron subidas al repositorio):
+
+I. Para ir a la carpeta
+
+```
+cd ProyectoFinal
+```
+
+II. Para instalar la librería de EJS
+
+```
+npm install ejs
+```
+

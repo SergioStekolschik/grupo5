@@ -1,0 +1,6 @@
+[Thu Dec 21 08:48:46.675409 2023] [mpm_winnt:notice] [pid 12916:tid 836] AH00455: Apache/2.4.6 (Win32) PHP/5.4.17 configured -- resuming normal operations
+[Thu Dec 21 08:48:46.675409 2023] [mpm_winnt:notice] [pid 12916:tid 836] AH00456: Apache Lounge VC10 Server built: Jul 16 2013 11:15:41
+[Thu Dec 21 08:48:46.675409 2023] [core:notice] [pid 12916:tid 836] AH00094: Command line: 'C:\\CursoNodeJS\\Grupo5\\grupo5-Actual\\BaseDatos/apache2/bin/httpd_usbwv8.exe -d C:/CursoNodeJS/Grupo5/grupo5-Actual/BaseDatos/apache2'
+[Thu Dec 21 08:48:46.681935 2023] [mpm_winnt:notice] [pid 12916:tid 836] AH00418: Parent: Created child process 11960
+[Thu Dec 21 08:48:49.199120 2023] [mpm_winnt:notice] [pid 11960:tid 804] AH00354: Child: Starting 64 worker threads.
+[Thu Dec 21 20:55:29.662254 2023] [:error] [pid 11960:tid 1288] [client ::1:51379] PHP Fatal error:  Call to undefined function PMA_SQP_parse() in C:\\CursoNodeJS\\Grupo5\\grupo5-Actual\\BaseDatos\\phpmyadmin\\libraries\\Util.class.php on line 1115, referer: http://localhost:8980/phpmyadmin/sql.php?db=funko&table=user&sql_query=SELECT+%2A+FROM+%60user%60&message_to_show=The+row+has+been+deleted&goto=tbl_sql.php&token=465593f16fdc758e7b6c5db75f821076&message=1+row+deleted.+%28Query+took+0.0055+sec%29

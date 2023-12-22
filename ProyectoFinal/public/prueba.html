@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista de Datos</title>
+  </head>
+  <body>
+    <header>
+        <select id="miLista" onchange="ordenarDatos()">
+            <option value=""></option>
+            <option value="ascendente">A-Z</option>
+            <option value="descendente">Z-A</option>
+            <option value="precioAscendente">Precio ascendente</option>
+            <option value="precioDescendente">Precio descendente</option>
+        </select>
+        <input type="text" id="filtroInput" placeholder="Escribe aquí">
+        <input type="text" id="minInput" placeholder="Min">
+        <input type="text" id="maxInput" placeholder="Max">
+    </header>    
+    <section>
+      <ul id="listaDatos">
+        <!-- Datos cargados dinámicamente desde el servidor -->
+      </ul>
+    </section>
+
+    <script>
+      let datosObtenidos = [];
+
+      function Publicar(listaDatos,datosPublicar) {
+        listaDatos.innerHTML = "";
+        // Llenar la lista de datos
+        datosPublicar.forEach((dato) => {
+          const elemento = document.createElement("li");
+          elemento.textContent = dato.product_name + "-" + dato.product_id + "-" + dato.product_description + "-" +	dato.price + "-" + 	dato.stock;
+          listaDatos.appendChild(elemento);
+        });
+      }
+        
+      async function cargarDatos() {
+        const listaDatos = document.getElementById("listaDatos");
+
+        // Hacer una solicitud al servidor para obtener los datos
+        const response = await fetch("/shop/datos");
+        const datos = await response.json();
+        
+        datosObtenidos = datos;
+        Publicar(listaDatos,datosObtenidos)
+      }
+
+      function ordenarDatos() {
+        // Limpiar Input 
+        const filtroInput = document.getElementById('filtroInput');
+        filtroInput.value = "";
+        const minInput = document.getElementById('minInput');
+        minInput.value = "";
+        const maxInput = document.getElementById('maxInput');
+        maxInput.value = "";
+
+        const listaDatos = document.getElementById("listaDatos");
+        const ordenSeleccionado = document.getElementById("miLista").value;
+
+        const elementosArray=[];
+        if (ordenSeleccionado === "ascendente" || ordenSeleccionado === "precioAscendente" || ordenSeleccionado === "precioDescendente")
+          datosObtenidos.sort((a, b) => a.product_name.localeCompare(b.product_name));
+        else if (ordenSeleccionado === "descendente")
+              datosObtenidos.sort((a, b) => b.product_name.localeCompare(a.product_name));
+        else if (ordenSeleccionado === "precioAscendente" ) 
+              datosObtenidos.sort((a, b) => a.price - b.price);
+        else if (ordenSeleccionado === "precioDescendente") 
+              datosObtenidos.sort((a, b) => a.price - b.price);
+
+        Publicar(listaDatos,datosObtenidos);
+      }
+     
+
+      document.addEventListener('DOMContentLoaded', function () {
+        const filtroInput = document.getElementById('filtroInput');
+        const minInput = document.getElementById('minInput');
+        const maxInput = document.getElementById('maxInput');
+        const listaDatos = document.getElementById('listaDatos');
+
+        // Manejar el evento de cambio en el input
+        filtroInput.addEventListener('input', function () {
+          console.log('paso');
+          const filtro = (filtroInput.value).toLowerCase(); // Convertir a minúsculas para hacer la comparación más flexible
+          // Filtrar los datos basándote en el input          
+          const datosFiltrados = datosObtenidos.filter((dato) => ((dato.product_name).toLowerCase()).includes(filtro));
+
+          Publicar(listaDatos,datosFiltrados);
+        });
+
+        
+        minInput.addEventListener('blur', function (event) {
+          // Filtrar los datos basándote en el input
+          let datosFiltrados = []
+          if (Number(maxInput.value) > 0 )
+            datosFiltrados = datosObtenidos.filter((dato) => (Number(dato.price) >=  Number(event.target.value) &&
+                                                  Number(dato.price) <=  Number(maxInput.value)))
+          else 
+            datosFiltrados = datosObtenidos.filter((dato) => (Number(dato.price) >=  Number(event.target.value)));
+          
+          Publicar(listaDatos,datosFiltrados);
+        });
+
+        maxInput.addEventListener('blur', function (event) {
+          // Filtrar los datos basándote en el input          
+          let datosFiltrados = []
+          if (Number(minInput.value) > 0 )
+            datosFiltrados = datosObtenidos.filter((dato) => (Number(dato.price) >=  Number(minInput.value) &&
+                                                  Number(dato.price) <=  Number(event.target.value)))           
+          else 
+            datosFiltrados = datosObtenidos.filter((dato) => (Number(dato.price) <=  Number(event.target.value)));
+          
+          Publicar(listaDatos,datosFiltrados);
+        });
+
+      });
+
+      // Cargar datos al cargar la página
+      cargarDatos();
+    </script>
+
+</body>
+</html>

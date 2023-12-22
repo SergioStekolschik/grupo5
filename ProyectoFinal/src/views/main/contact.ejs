@@ -1,0 +1,41 @@
+<%- include('../partials/header') %>
+    <main class="main container item-main">
+    <main>
+        
+      <section class="contact">
+        <h1>Contacto</h1>
+
+        <form action="">
+            <div class="name-email">
+                <div class="name">
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" name="name" placeholder="Nombre" required>
+                </div>
+
+                <div class="email">
+                    <label for="email">E-mail:</label>
+                    <input type="text" id="email" name="email" placeholder="E-mail" required>
+                </div>
+            </div>
+
+            <label for="subject">Motivo:</label>
+            <select id="subject" name="subject">
+              <option value="question">Consulta</option>
+              <option value="suggestion">Sugerencia</option>
+              <option value="complaint">Reclamo</option>
+              <option value="other">Otro</option>
+            </select>
+
+            <label for="message">Mensaje:</label>
+            <textarea id="message" name="message" placeholder="Mensaje" required></textarea>
+        
+            <div class="buttons">
+                <input type="reset" value="Borrar">
+                <input type="submit" value="Enviar">
+            </div>
+        </form>
+      </section>
+
+    </main>
+
+<%- include('../partials/footer') %>

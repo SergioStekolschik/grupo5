@@ -1,3 +1,4 @@
+const bcrypt = require('bcrypt')
 const UserModel = require('../models/userModel');
 
 const createUser = async (user) => {
@@ -5,11 +6,16 @@ const createUser = async (user) => {
     name: user.name,
     lastname: user.lastname,
     email: user.email,
-    password: user.password
+    password: bcrypt.hashSync(user.password, 10)
   }
   return await UserModel.createUser([Object.values(userSchema)]);
 }
 
+const getUserByEmail  = async (email) => {
+  return await UserModel.getUserByEmail(email);
+}
+
 module.exports = {
-  createUser
+  createUser,
+  getUserByEmail 
 }

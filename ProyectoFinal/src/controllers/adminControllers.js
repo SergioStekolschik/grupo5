@@ -28,9 +28,16 @@ module.exports = {
   },
   createItem: async (req, res) => {
     let item = req.body;
-    item.image_front = "/" + req.files[0].originalname;
-    item.image_back = "/" + req.files[1].originalname;
-    await ItemsService.createItem(item);
+
+    const imagenes = req.files;
+    if (imagenes.length > 0) {
+      item.image_front = "/" + req.files[0].originalname;
+      item.image_back = "/" + req.files[1].originalname;
+    } else {
+      item.image_front = "";
+      item.image_back = "";
+    }
+    const response = await ItemsService.createItem(item);
     res.redirect('/admin/admin');
   },
   editView: async (req, res) => {
@@ -50,7 +57,13 @@ module.exports = {
   },
   editItem: async (req, res) => {
     const id = req.params.id;
-    const item = req.body;
+    let item = req.body;
+
+    const imagenes = req.files;
+    if (imagenes.length > 0) {
+      item.image_front = "/" + req.files[0].originalname;
+      item.image_back = "/" + req.files[1].originalname;
+    }
     await ItemsService.editItem(item, id);
     res.redirect('/admin/admin');
   },
@@ -61,6 +74,7 @@ module.exports = {
     res.redirect('/admin/admin');
   },
   loginView: (req, res) => {
+    res.cookie("FunkoShop" , 'value', {expire : new Date() + 9999});
     res.render('./auth/login', {
       view: {
         title: 'Login | Funkoshop'
@@ -68,7 +82,8 @@ module.exports = {
     });
   },
   loginUser: (req, res) => {
-    res.send('Login Route that receive the data when user click login button')
+    req.session.username = username;   
+    res.redirect('/admin/register');
   },
   registerView: (req, res) => {
     res.render('./auth/register', {
@@ -77,10 +92,11 @@ module.exports = {
       }
     });
   },
-  registerUser: (req, res) => {
+  registerUser: async (req, res) => {
     const user = req.body;
-    UserService.createUser(user);
-    res.redirect('/admin/admin');
+    await UserService.createUser(user);
+    
+    res.redirect('/shop/shop');
   }
 };
 

@@ -12,28 +12,76 @@
                     style="color: #f33;"></iconify-icon></a>
                 </span>
             </div>
-            <div class="admin-table">
-                <header class="admin-table__header">
-                    <h3>ID</h3>
-                    <h3>C&oacute;digo</h3>
-                    <h3>Nombre del Producto</h3>
-                    <h3>Categor&iacute;a</h3>
-                </header>
-                <% items.forEach(item => { %>
-                    <article class="admin-table__row">
-                        <p><%= item.product_id %></p>
-                        <p><%= item.sku %></p>
-                        <p><%= item.product_name %></p>
-                        <p><%= item.category_name %></p>
-                        <a href="./edit/<%= item.product_id %>"><iconify-icon icon="mdi:pencil" class="iconify-icon-pencil"></iconify-icon></a>
-                        <form action="/admin/delete/<%= item.product_id %>?_method=DELETE" method="POST">
-                            <button class="admin-table__btn-delete" type="submit">
-                                <iconify-icon icon="heroicons-solid:trash" class="iconify-icon-trash"></iconify-icon>
-                            </button>
-                        </form>
-                    </article>
-                <% }); %>
+            <div class="admin-table" id="listaDatos">
             </div>
         </section>
     </main>
+    <script>
+        let datosObtenidos = [];
+
+        function publicar(listaDatos,datosPublicar) {
+            listaDatos.innerHTML = "";
+            // Llenar la lista de datos
+            let html = "";
+
+            html += "<header class=\"admin-table__header\">";
+            html += "    <h3>ID</h3>";
+            html += "    <h3>C&oacute;digo</h3>";
+            html += "    <h3>Nombre del Producto</h3>";
+            html += "    <h3>Categor&iacute;a</h3>";
+            html += "</header>";
+
+            datosPublicar.forEach((dato) => {
+                html +=  "<article class=\"admin-table__row\">";
+                html +=  "    <p>" + dato.product_id + "</p>";
+                html +=  "    <p>" + dato.sku + "</p>";
+                html +=  "    <p>" + dato.product_name + "</p>";
+                html +=  "    <p>" + dato.category_name + "</p>";
+                html +=  "    <a href=\"./edit/" + dato.product_id + "\"><iconify-icon icon=\"mdi:pencil\" class=\"iconify-icon-pencil\"></iconify-icon></a>";
+                html +=  "    <form action=\"/admin/delete/" + dato.product_id + "?_method=DELETE\" method=\"POST\">";
+                html +=  "        <button class=\"admin-table__btn-delete\" type=\"submit\">";
+                html +=  "            <iconify-icon icon=\"heroicons-solid:trash\" class=\"iconify-icon-trash\"></iconify-icon>";
+                html +=  "        </button>";
+                html +=  "    </form>";
+                html +=  "</article>";
+            });
+
+            console.log(html);
+            listaDatos.innerHTML = html;
+        }
+
+        async function cargarDatos() {
+            const listaDatos = document.getElementById('listaDatos');
+
+            // Hacer una solicitud al servidor para obtener los datos
+            const response = await fetch("/shop/datos");
+            const datos = await response.json();
+
+            datosObtenidos = datos;
+            datosObtenidos.sort((a, b) => a.product_id - b.product_id);
+        
+            publicar(listaDatos,datosObtenidos);
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const search = document.getElementById('search');
+            const listaDatos = document.getElementById('listaDatos');
+
+            // Manejar el evento de cambio en el input
+            search.addEventListener('input', function () {
+                const filtro = (search.value).toLowerCase(); // Convertir a minúsculas para hacer la comparación más flexible
+                // Filtrar los datos basándote en el input          
+                const datosFiltrados = datosObtenidos.filter((dato) => 
+                                        ((dato.sku).toLowerCase()).includes(filtro) 
+                                    || ((dato.product_name).toLowerCase()).includes(filtro)
+                                    || ((dato.category_name).toLowerCase()).includes(filtro) 
+                                        );
+
+                publicar(listaDatos,datosFiltrados);
+            });
+        });
+
+        // Cargar datos al cargar la página
+        cargarDatos();
+    </script>
 <%- include('../partials/footer_admin') %>
