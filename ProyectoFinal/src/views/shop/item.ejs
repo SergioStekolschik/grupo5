@@ -1,4 +1,4 @@
-<%- include('../partials/header') %>
+<%- include('../partials/header_con_slider') %>
     <main class="main container item-main">
         <section class="item">
             <picture class="item__img card-item__cover">
@@ -122,11 +122,10 @@
                 if (localStorage === null) {
                     localStorage = []; 
                 }
-                console.log(localStorage);
                 localStorage.push(compra);
                 setOpening(localStorage);
             }    
         }
     </script>
 
-<%- include('../partials/footer') %>
+<%- include('../partials/footer_con_slider') %>
